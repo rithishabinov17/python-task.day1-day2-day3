@@ -1,0 +1,97 @@
+print("-------DAILY 24-Hour Personal Time & Habit Analysis System-------\n")
+
+# Inputs
+sleep = float(input("Sleep Hours        : "))
+study = float(input("Study hours        : "))
+screen = float(input("Screen time hours  : "))
+family = float(input("Family time hours  : "))
+exercise = float(input("Exercise hours     : "))
+work = float(input("Work hours         : "))
+
+# Daily calculation
+daily_used = sleep + study + screen + family + exercise + work
+daily_free = 24 - daily_used
+
+# Weekly / Monthly / Yearly
+weekly_total = 24 * 7
+weekly_used = daily_used * 7
+weekly_free = weekly_total - weekly_used
+
+monthly_total = 24 * 30
+monthly_used = daily_used * 30
+monthly_free = monthly_total - monthly_used
+
+yearly_total = 24 * 365
+yearly_used = daily_used * 365
+yearly_free = yearly_total - yearly_used
+
+# Daily report
+print("\n------DAILY REPORT-------")
+print("Total Hours (Day) :", 24, "hrs")
+print("Used Hours        :", daily_used, "hrs")
+print("Free Hours        :", daily_free, "hrs")
+
+# Weekly report
+print("\n---------- WEEKLY REPORT ----------")
+print("Total Hours (Week):", weekly_total, "hrs")
+print("Used Hours (Week) :", weekly_used, "hrs")
+print("Free Hours (Week) :", weekly_free, "hrs")
+
+# Monthly report
+print("\n---------- MONTHLY REPORT ----------")
+print("Total Hours (Month):", monthly_total, "hrs")
+print("Used Hours (Month) :", monthly_used, "hrs")
+print("Free Hours (Month) :", monthly_free, "hrs")
+
+# Yearly report
+print("\n----------- YEARLY REPORT ----------")
+print("Total Hours (Year) :", yearly_total, "hrs")
+print("Used Hours (Year)  :", yearly_used, "hrs")
+print("Free Hours (Year)  :", yearly_free, "hrs")
+
+# Habit analysis
+print("\n----------- HABIT LIMIT ANALYSIS -----------")
+
+# Sleep check
+if 6 <= sleep <= 8:
+    print(f"Sleep       : Good ({sleep} hrs)")
+else:
+    print(f"Sleep       : Out of limit ({sleep} hrs) | Ideal 6–8 hrs")
+
+# Study check
+if 1 <= study <= 3:
+    print(f"Study       : OK ({study} hrs)")
+else:
+    print(f"Study       : Over/Low ({study} hrs) | Ideal 1–3 hrs")
+
+# Screen check
+if screen <= 3:
+    print(f"Screen Time : OK ({screen} hrs)")
+else:
+    print(f"Screen Time : Over ({screen} hrs) | Max 3 hrs")
+
+# Family check
+if family >= 1:
+    print(f"Family Time : Good ({family} hrs)")
+else:
+    print(f"Family Time : Low ({family} hrs) | Need 1+ hrs")
+
+# Exercise check
+if exercise >= 0.5:
+    print(f"Exercise    : Good ({exercise} hrs)")
+else:
+    print(f"Exercise    : Low ({exercise} hrs) | Need 0.5+ hrs")
+# Work check
+if 5 <= work <= 8:
+    print(f"Work        : Good ({work} hrs)")
+else:
+    print(f"Work        : Out of limit ({work} hrs) | Ideal 5–8 hrs")
+    
+
+# Free time check
+if daily_free >= 1:
+    print(f"Free Time   : Healthy ({daily_free} hrs)")
+else:
+    print(f"Free Time   : Low ({daily_free} hrs)")
+
+print("\nTime awareness = Life awareness ️")
