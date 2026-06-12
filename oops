@@ -1,0 +1,84 @@
+print("=======object oriented programing code======")
+
+#------1.class-----
+
+class demo: #
+    def add(self):
+        print("hi")
+obj=demo() #class name
+obj.add() #function name,obj -any name used object name
+
+#----2.class----
+#parmeter coding-one user name in used  two function  
+class Details:
+    def setdata(self):
+        # self → current object
+        # username → object variable
+        self.username = input("Enter username: ")
+
+    def res(self, age):
+        print(self.username)
+        print(age)
+
+    def login(self):
+        print(self.username)
+
+g = Details()
+g.setdata()
+g.res(22)
+g.login()
+
+
+#-------3.inheritance-----
+#single level inheritance(child to det data to parent)
+
+'''class parent:
+    def super(self):
+        print("i am in parent class")
+class child(parent):
+    def sub(self):
+        print("i am in sub ")
+c_home=child() #class name-child,oops name-c
+c_home.super() #first  function name-super
+c_home.sub() #second function name-sub'''
+
+#example
+
+class Animal:
+    def sound(self):
+        print("Animals make sound")
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+d=Dog()
+d.sound()
+d.bark()
+
+#multiple level inheritance
+
+class fr_ob1:
+    def first_elite(self):
+        print("first elite")
+    def second_elite(self):
+        print("second elite")
+class fr_ob2(fr_ob1):
+    def third_elite(self):
+        print("third elite")
+    def fourth_elite(self):
+        print("fourth elite")
+class fr_ob3(fr_ob2):
+    def fifth_elite(self):
+        print("fifth elite")
+    def sixth_elite(self):
+        print("sixth elite")
+d= fr_ob3()
+d.sixth_elite()
+d.fifth_elite()
+d.fourth_elite()
+d.third_elite()
+d.second_elite()
+d.first_elite()
+
+        
+        
+        
