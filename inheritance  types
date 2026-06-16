@@ -1,0 +1,126 @@
+#Types of Inheritance in Python
+
+#1.Single Inheritance
+'''One parent → One child'''
+'''class Father:
+    def house(self):
+        print("Father has a house")
+
+class Son(Father):
+    def bike(self):
+        print("Son has a bike")
+
+s = Son()
+s.house()
+s.bike()'''
+
+#2.Multilevel Inheritance
+'''Grandparent → Parent → Child'''
+
+'''class Grandfather:
+    def land(self):
+        print("Grandfather has land")
+
+class Father(Grandfather):
+    def house(self):
+        print("Father has a house")
+
+class Son(Father):
+    def bike(self):
+        print("Son has a bike")
+
+s = Son()
+s.land()
+s.house()
+s.bike()'''
+
+#3.Multiple Inheritance
+#Multiple parents → One child
+
+
+'''class Father:
+    def house(self):
+        print("Father house")
+
+class Mother:
+    def gold(self):
+        print("Mother gold")
+
+class Child(Father, Mother):
+    def bike(self):
+        print("Child bike")
+
+c = Child()
+c.house()
+c.gold()
+c.bike()'''
+
+
+#4.Hierarchical Inheritance
+#One parent → Multiple children
+'''class Parent:
+    def property(self):
+        print("Parent property")
+
+class Child1(Parent):
+    pass
+
+class Child2(Parent):
+    pass
+
+c1 = Child1()
+c2 = Child2()
+
+c1.property()
+c2.property()'''
+
+
+#5.Hybrid Inheritance
+#Combination of two or more inheritance type
+
+'''class A:
+    def showA(self):
+        print("Class A")
+
+class B(A):
+    def showB(self):
+        print("Class B")
+
+class C(A):
+    def showC(self):
+        print("Class C")
+
+class D(B, C):
+    def showD(self):
+        print("Class D")
+
+d = D()
+d.showA()
+d.showB()
+d.showC()
+d.showD()'''
+
+#constructor is a special method that is automatically called when an object is created.
+
+'''class Student:
+    def __init__(self):
+        print("Student object created")
+
+s1 = Student()'''
+
+
+#destructore
+# A destructor is a special method that is called automatically when an object is destroyed.
+
+class Demo:
+    def __init__(self):
+        print("Object created")
+
+    def __del__(self):
+        print("Object destroyed")
+
+d = Demo()
+del d
+
+
+
