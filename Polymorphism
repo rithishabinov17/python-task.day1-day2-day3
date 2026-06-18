@@ -1,0 +1,106 @@
+'''#Polymorphism
+
+class Student:
+    def show(self):
+        print("I am a student")
+
+class Teacher:
+    def show(self):
+        print("I am a teacher")
+
+obj1 = Student()# objects
+obj2 = Teacher()
+
+obj1.show()# same method name show(), different behavior
+obj2.show()
+
+#types-polymorphism-#1.method overloading(complier time)
+class Calculator:
+    def add(self, a, b=0, c=0):
+        print("Result =", a + b + c)
+
+obj = Calculator()
+
+obj.add(2, 3)        # 2 + 3
+obj.add(2, 3, 4)     # 2 + 3 + 4
+
+#types-polymorphism-#2.method override(runtime)
+
+class Animal:
+    def sound(self):
+        print("Some sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def sound(self):
+        print("Meow")
+
+a1 = Dog()
+a2 = Cat()
+
+a1.sound()
+a2.sound()
+#types-polymorphism-#3.Operator
+
+a=int(input("enter the value"))
+b=int(input("enter the value"))
+print(int._add_(a,b))
+print(int._divmod_(a,b))
+print(a)
+print(int.__sub(a,b))
+print(int._ge_(a,b))
+print(int._le_(a,b))
+print(int._eq_(a,b))'''
+
+
+
+#Abstraction(Hiding implementation details)
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
+
+class Car(Vehicle):
+    def start(self):
+        print("Car is starting with key")
+
+class Bike(Vehicle):
+    def start(self):
+        print("Bike is starting with self start")
+
+c = Car()
+b = Bike()
+
+c.start()
+b.start()
+
+#Encapsulation(Data hiding is done using private variables)
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance   # private variable
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient balance")
+
+    def show_balance(self):
+        print("Balance =", self.__balance)
+
+
+acc = BankAccount(1000)# object
+
+acc.deposit(500)
+acc.withdraw(200)
+acc.show_balance()
+
